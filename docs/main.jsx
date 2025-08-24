@@ -22,18 +22,31 @@ function RevealBlock({ children, threshold = 0.25 }) {
     inViewRef(node)
   }
 
+  const variants = {
+    hidden: {
+      opacity: 0,
+      filter: 'blur(20px)',
+      transition: {
+        opacity: { duration: 0.55, ease: [0.7, 0.0, 0.84, 0.0] }, // approx easeInExpo
+        filter: { duration: 0.55, ease: [0.7, 0.0, 0.84, 0.0] },
+      }
+    },
+    visible: {
+      opacity: 1,
+      filter: 'blur(0px)',
+      transition: {
+        opacity: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }, // easeOutExpo-like
+        filter: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+      }
+    }
+  }
+
   return (
     <motion.div
       ref={setRefs}
-      initial={{ opacity: 0, filter: 'blur(20px)' }}
-      animate={inView ? { opacity: 1, filter: 'blur(0px)' } : { opacity: 0, filter: 'blur(20px)' }}
-      transition={{
-        // Enter: smooth, natural
-        opacity: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-        filter: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-        // Exit: exponential ease-in feel
-        when: 'beforeChildren'
-      }}
+      initial="hidden"
+      animate={inView ? 'visible' : 'hidden'}
+      variants={variants}
       style={{ willChange: 'opacity, filter' }}
     >
       {children}

@@ -4,6 +4,7 @@
 export { default as AirportTextReveal } from './AirportTextReveal.jsx';
 export { default as FloatingNav } from './FloatingNav.jsx';
 export { default as VideoBackground } from './VideoBackground.jsx';
+export { default as MindTypeText } from './MindTypeText.jsx';
 
 // Component metadata for Framer
 export const componentInfo = {
@@ -22,5 +23,12 @@ export const componentInfo = {
     category: "Backgrounds",
     tags: ["video", "parallax", "background", "glass"]
   }
+};
+
+// Add metadata for MindTypeText
+export const MindTypeTextInfo = {
+  description: "MindType correction wave text animation (scramble → correct)",
+  category: "Text Effects",
+  tags: ["text", "animation", "scramble", "wave", "framer"],
 };
 

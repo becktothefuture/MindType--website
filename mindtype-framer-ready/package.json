@@ -1,0 +1,33 @@
+{
+  "name": "mindtype-framer-components",
+  "version": "1.0.0",
+  "description": "Mind::Type React components optimized for Framer import",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "framer-motion": "^10.16.4",
+    "react-intersection-observer": "^9.5.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "vite": "^4.4.5"
+  },
+  "keywords": [
+    "react",
+    "framer",
+    "animation",
+    "text-effects",
+    "mindtype"
+  ],
+  "author": "Mind::Type Team",
+  "license": "MIT"
+}
+
